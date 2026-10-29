@@ -1,0 +1,37 @@
+[
+  {
+    "id": "B001",
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "replacementPrice": 250000,
+    "isAvailable": true
+  },
+  {
+    "id": "B002",
+    "title": "Design Patterns",
+    "author": "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+    "replacementPrice": 320000,
+    "isAvailable": true
+  },
+  {
+    "id": "B003",
+    "title": "Flutter in Action",
+    "author": "Eric Windmill",
+    "replacementPrice": 180000,
+    "isAvailable": true
+  },
+  {
+    "id": "B004",
+    "title": "Introduction to Algorithms",
+    "author": "Thomas H. Cormen",
+    "replacementPrice": 450000,
+    "isAvailable": true
+  },
+  {
+    "id": "B005",
+    "title": "Refactoring",
+    "author": "Martin Fowler",
+    "replacementPrice": 280000,
+    "isAvailable": true
+  }
+]
