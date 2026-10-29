@@ -78,18 +78,18 @@ class BorrowedBooksViewModel extends ChangeNotifier {
       return 0.0;
     }
 
-    final sixMonthsThreshold = _getSixMonthsThreshold(loan.dueDate);
-    if (effectiveDate.isAfter(sixMonthsThreshold) || effectiveDate.isAtSameMomentAs(sixMonthsThreshold)) {
-      final book = getBookById(loan.bookId);
-      return book.replacementPrice;
-    }
     double totalFine = 0.0;
-
     for (int day = 7; day <= daysOverdue; day++) {
       int dayAfterGrace = day - 6;
       int currentWeek = ((dayAfterGrace - 1) ~/ 7) + 1;
       double dailyRate = currentWeek * 5000.0;
       totalFine += dailyRate;
+    }
+
+    final sixMonthsThreshold = _getSixMonthsThreshold(loan.dueDate);
+    if (effectiveDate.isAfter(sixMonthsThreshold) || effectiveDate.isAtSameMomentAs(sixMonthsThreshold)) {
+      final book = getBookById(loan.bookId);
+      return book.replacementPrice + totalFine;
     }
 
     return totalFine;
